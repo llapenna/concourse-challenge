@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "release": "release-it",
-    "prepare": "husky"
+    "prepare": "husky && panda codegen"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.2.2",
+    "@pandacss/dev": "^0.41.0",
     "@release-it/conventional-changelog": "^8.0.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
