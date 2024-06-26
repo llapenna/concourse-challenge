@@ -1,4 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
+import { base, themeConditions } from "./src/styles/theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -12,8 +13,9 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: base,
   },
+  conditions: themeConditions,
 
   // The output directory for your css system
   outdir: "styled-system",
