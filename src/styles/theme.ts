@@ -10,12 +10,15 @@ const themedToken = (base: string, dark?: string) => ({
 export const base = defineThemeVariant({
   tokens: {},
   semanticTokens: {
+    sizes: {
+      dayBox: { value: "12px" },
+    },
     colors: {
       // TODO: Define more theme colors
       // Background
       mainBg: themedToken("{colors.emerald.50}", "#070F2B"),
-      graphBg: themedToken("#FFF"),
-      buttonBg: themedToken("#000", "#FFF"),
+      graphBg: themedToken("{colors.white}"),
+      buttonBg: themedToken("{colors.black}", "{colors.white}"),
 
       intensity0: themedToken("{colors.green.100}", "{colors.red.100}"),
       intensity1: themedToken("{colors.green.300}", "{colors.red.300}"),
@@ -24,8 +27,8 @@ export const base = defineThemeVariant({
       intensity4: themedToken("{colors.green.600}", "{colors.red.600}"),
 
       // Text
-      baseText: themedToken("#333", "#FAFAFA"),
-      altText: themedToken("#FAFAFA", "#333"),
+      baseText: themedToken("{colors.zinc.700}", "{colors.neutral.50}"),
+      altText: themedToken("{colors.neutral.50}", "{colors.zinc.700}"),
       legendText: themedToken("{colors.gray.400}"),
     },
     gradients: {
