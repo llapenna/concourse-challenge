@@ -10,9 +10,11 @@ export const Day = ({ intensity = 0, as = "td", day, count }: Props) => {
   const classes = dayStyles({ intensity });
   const Component = as;
 
+  const hasTooltip = Boolean(day && count);
+
   return (
     <Component className={classes.box}>
-      {day && count && (
+      {hasTooltip && (
         <div className={classes.tooltip}>
           <span>{day}</span>
           <span>|</span>

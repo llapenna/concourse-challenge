@@ -63,12 +63,16 @@ export const day = sva({
 
       zIndex: 1,
       position: "absolute",
+      // Position the tooltip in the middle of the day box by considering its width and padding
+      left: `-${100 / 2 - 16 / 2}px`,
+      bottom: 6,
 
-      py: 2,
-      px: 4,
+      py: "8px",
+      px: "16px",
       width: "100px",
 
-      borderRadius: 4,
+      boxSizing: "border-box",
+      borderRadius: 6,
       bg: "black",
       color: "white",
     },
