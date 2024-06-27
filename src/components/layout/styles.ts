@@ -10,7 +10,6 @@ export const styles = sva({
 
       minHeight: "100vh",
       minWidth: "100vw",
-      position: "relative",
 
       padding: "4",
     },
@@ -20,14 +19,14 @@ export const styles = sva({
       justifyContent: "flex-end",
     },
     content: {
-      flex: 1,
+      mt: 32,
     },
     gpt: {
-      position: "absolute",
-      border: "1px solid black",
+      position: "fixed",
+      width: "100vw",
 
-      // Position the button right in the middle of the screen
-      left: "50%",
+      display: "flex",
+      justifyContent: "center",
       bottom: 16,
     },
   },

@@ -1,5 +1,6 @@
 import { styles } from "./styles";
 import { ThemeToggle } from "../theme-toggle";
+import { GPTButton } from "../common";
 
 interface Props {
   children: React.ReactNode;
@@ -12,8 +13,9 @@ export const Layout = ({ children }: Props) => {
         <ThemeToggle></ThemeToggle>
       </nav>
       <div className={classes.content}>{children}</div>
-      {/* TODO: define and style this component */}
-      <button className={classes.gpt}>Ask me anything!</button>
+      <div className={classes.gpt}>
+        <GPTButton></GPTButton>
+      </div>
     </main>
   );
 };
