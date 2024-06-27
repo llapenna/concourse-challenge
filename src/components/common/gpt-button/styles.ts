@@ -7,7 +7,7 @@ export const recipe = defineSlotRecipe({
     wrapper: {
       position: "relative",
       borderRadius: "full",
-      padding: "4px",
+      padding: 2,
     },
     inner: {
       borderRadius: "full",
@@ -46,7 +46,7 @@ export const recipe = defineSlotRecipe({
         animation: "bgSpin 5s infinite",
         backgroundSize: "400%",
         bgGradient: "rotatingButton",
-        filter: "blur(4px)",
+        filter: "blur(10px)",
       },
     },
   },
