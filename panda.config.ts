@@ -1,6 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
 
 import { recipe as gptButtonRecipe } from "./src/components/common/gpt-button/styles";
+import { base, themeConditions, keyframes } from "./src/styles/theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -15,6 +16,7 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: base,
+    keyframes,
     recipes: {
       gptButton: gptButtonRecipe,
     },
