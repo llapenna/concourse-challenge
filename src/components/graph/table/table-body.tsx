@@ -21,8 +21,8 @@ export const TableBody = ({ activity, max }: Props) => {
           {getDayFromWeeks(activity, dayIndex).map((d) => (
             <Day
               intensity={calculateIntensity(max, d)}
-              day="Sun"
-              count={3}
+              day={day.short}
+              count={d}
             ></Day>
           ))}
         </tr>
