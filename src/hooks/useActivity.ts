@@ -5,6 +5,11 @@ import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
+export const getMaxIntensity = (data: RawActivity[]) => {
+  const allContributions = data.flatMap((w) => w.days);
+  return Math.max(...allContributions);
+};
+
 export const useActivity = () => {
   const { data, error, isLoading } = useSWR<RawActivity[]>(
     COMMITS_API,
@@ -15,11 +20,13 @@ export const useActivity = () => {
     if (!data) return null;
 
     // TODO: Transform/map this data so it can be used easily in the Activity component
+    // TODO: sort the data to make sure it's ordered by date
     return data;
   }, [data]);
 
   return {
     data: parsedData,
+    max: getMaxIntensity(parsedData ?? []),
     error,
     isLoading,
   };
