@@ -5,6 +5,11 @@ export const COMMITS_API =
   "https://api.github.com/repos/facebook/react/stats/commit_activity";
 
 /**
+ * OpenAI GPT API URL
+ */
+export const GPT_API = "http://localhost:4000";
+
+/**
  * Days of the week used to render the graph
  */
 export const WEEK_DAYS = [
