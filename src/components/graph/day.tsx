@@ -14,11 +14,13 @@ export const Day = ({ intensity = 0, as = "td", day, count }: Props) => {
 
   return (
     <Component className={classes.box}>
-      <div className={classes.tooltip}>
-        <span>{day}</span>
-        <span>|</span>
-        <span>{hasData ? count : 0}</span>
-      </div>
+      {count !== undefined && (
+        <div className={classes.tooltip}>
+          <span>{day}</span>
+          <span>|</span>
+          <span>{hasData ? count : 0}</span>
+        </div>
+      )}
     </Component>
   );
 };
