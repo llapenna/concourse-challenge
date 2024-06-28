@@ -19,6 +19,7 @@ export const base = defineThemeVariant({
       mainBg: themedToken("{colors.emerald.50}", "#070F2B"),
       graphBg: themedToken("{colors.white}"),
       buttonBg: themedToken("{colors.black}", "{colors.white}"),
+      sendButtonBg: themedToken("{colors.emerald.600}", "{colors.red.500}"),
 
       intensity0: themedToken("{colors.green.100}", "{colors.red.100}"),
       intensity1: themedToken("{colors.green.300}", "{colors.red.300}"),
