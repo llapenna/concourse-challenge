@@ -1,6 +1,19 @@
 import { Message } from "@/types/message";
 import { GPT_API } from "@/utils/constants";
 
+/**
+ * Extracts each value from the `data: ...` message list
+ * @param dataEvents Data directly extracted from the stream of messages
+ */
+const concatDataEvents = (dataEvents: string) => {
+  const regex = /data: (.*)/g;
+  const matches = dataEvents.matchAll(regex);
+
+  const values = Array.from(matches).map((match) => match[1]);
+
+  return values.join("");
+};
+
 type OnMessage = (message: string) => void;
 /**
  * Ask the GPT-4 model a question and parses the stream of messages
@@ -23,12 +36,9 @@ export const ask = async (messages: Message[], onMessage: OnMessage) => {
   // Start reading
   // @ts-expect-error - TS can't infer the correct return type for the processor function
   reader.read().then(function processor({ done, value }) {
-    if (done) {
-      console.log("Stream complete");
-      return;
-    }
+    if (done) return;
 
-    onMessage(value);
+    onMessage(concatDataEvents(value));
 
     // Continue reading some more until finishing
     return reader.read().then(processor);
