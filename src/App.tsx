@@ -1,9 +1,9 @@
 import { Layout, Graph } from "@/components";
 
 function App() {
+  console.log("Made with ❤️ by Luciano Lapenna");
   return (
     <Layout>
-      <h1>Concourse Challenge</h1>
       <Graph></Graph>
     </Layout>
   );
