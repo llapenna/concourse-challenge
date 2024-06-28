@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Concourse challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## GPT Powered Activity Graph
 
-Currently, two official plugins are available:
+This project integrates a GPT (Generative Pre-trained Transformer) model with the GitHub API to create an activity graph. The GPT model can answer questions formulated by the user in natural language about the GitHub API response.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- ⚡ [Vite](https://vitejs.dev/): Fast and opinionated web development build tool that serves your code via native ES Module imports during development.
+- ⚛️ [React](https://reactjs.org/): A JavaScript library for building user interfaces.
+- 🆎 [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript.
+- 🐼 [PandaCSS](https://panda-css.com/): A minimal, lightweight and zero-runtime CSS-in-js framework for small projects.
+- 📦 [SWR](https://swr.vercel.app/): React Hooks library for data fetching.
+- 🤖 [OpenAI GPT-4](https://platform.openai.com/docs): A powerful language model that can generate human-like text.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- [Node.js](https://nodejs.org/en) (version 20 or above)
+- pnpm (preferred), npm or yarn
+
+### Set up
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/llapenna/concourse-challenge.git
+cd concourse-challenge
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Install dependencies
+
+```bash
+pnpm install
+```
+
+### Running the app
+
+``` bash
+pnpm dev
+```
+
+You can now access the app at [localhost:5173](http://localhost:5173).
+
+## Project Architecture
+
+- `src/components`: React components reused across the application.
+- `src/context`: React context used to manage global state.
+- `src/hooks`: custom hooks used to fetch data and manage state.
+- `src/services`: functions that interact directly with externals APIs (like OpenAI).
+- `src/styles`: global styles and theme configuration.
+- `src/types`: TypeScript types used across the application.
+- `src/utils`: utility functions and constants
