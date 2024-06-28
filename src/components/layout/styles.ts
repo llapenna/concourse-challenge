@@ -62,7 +62,7 @@ export const chat = sva({
 
       padding: 4,
 
-      bg: "white",
+      bg: "chatBg",
       borderRadius: 16,
       boxShadow: "0 0 10px rgba(0,0,0,0.1)",
     },
@@ -135,6 +135,7 @@ export const chatBubble = sva({
       maxWidth: "80%",
       p: 4,
 
+      bg: "bubbleChatBg",
       borderRadius: 16,
       boxShadow: "0 0 10px rgba(0,0,0,0.1)",
     },
@@ -163,6 +164,7 @@ export const chatBubble = sva({
 
 export const suggestion = cva({
   base: {
+    bg: "bubbleChatBg",
     cursor: "pointer",
     border: "1px solid lightgrey",
     borderRadius: 4,
