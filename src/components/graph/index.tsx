@@ -15,11 +15,11 @@ export const Graph = () => {
       <div className={classes.legend}>
         Less
         <div className={hstack({ gap: 1 })}>
-          <Day as="div" intensity={0}></Day>
-          <Day as="div" intensity={1}></Day>
-          <Day as="div" intensity={2}></Day>
-          <Day as="div" intensity={3}></Day>
-          <Day as="div" intensity={4}></Day>
+          <Day as="div" intensity={0} day={null}></Day>
+          <Day as="div" intensity={1} day={null}></Day>
+          <Day as="div" intensity={2} day={null}></Day>
+          <Day as="div" intensity={3} day={null}></Day>
+          <Day as="div" intensity={4} day={null}></Day>
         </div>
         More
       </div>

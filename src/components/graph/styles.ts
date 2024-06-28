@@ -75,6 +75,10 @@ export const day = sva({
       borderRadius: 6,
       bg: "black",
       color: "white",
+
+      "& span": {
+        textWrap: "nowrap",
+      },
     },
   },
   variants: {

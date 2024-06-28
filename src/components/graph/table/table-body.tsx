@@ -1,9 +1,20 @@
 import { RawActivity } from "@/types/activity";
-import { WEEK_DAYS } from "@/utils/constants";
+import { WEEK_DAYS, MONTHS } from "@/utils/constants";
 
 import { daysAxis } from "../styles";
 import { calculateIntensity, getDayFromWeeks } from "../utils";
 import { Day } from "../day";
+
+const formatDate = (timestamp: number, dayIndex: number) => {
+  const dateObject = new Date(
+    timestamp * 1000 + dayIndex * 24 * 60 * 60 * 1000
+  );
+
+  const [date] = dateObject.toISOString().split("T");
+  const [, month, day] = date.split("-");
+
+  return `${MONTHS[parseInt(month) - 1].short} ${day}`;
+};
 
 interface Props {
   activity: RawActivity[];
@@ -22,6 +33,7 @@ export const TableBody = ({ activity, max }: Props) => {
             <Day
               key={`${d.week}-${d}`}
               intensity={calculateIntensity(max, d.day)}
+              day={formatDate(d.week, dayIndex)}
               count={d.day}
             ></Day>
           ))}
