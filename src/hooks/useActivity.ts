@@ -10,6 +10,7 @@ export const getMaxIntensity = (data: RawActivity[]) => {
   return Math.max(...allContributions);
 };
 
+// TODO: add a context to store the data
 export const useActivity = () => {
   const { data, error, isLoading } = useSWR<RawActivity[]>(
     COMMITS_API,

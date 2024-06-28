@@ -16,7 +16,7 @@ export const TableHeader = ({ activity }: Props) => {
         {/* Empty cell to reserve space for the days axis */}
         <th></th>
         {activity.map((w, weekIndex) => (
-          <th className={monthsAxis()}>
+          <th className={monthsAxis()} key={w.week}>
             {weekIndex === 0 && monthToString(w.week)}
             {weekIndex > 0 &&
               getMonth(activity[weekIndex - 1].week) !== getMonth(w.week) &&

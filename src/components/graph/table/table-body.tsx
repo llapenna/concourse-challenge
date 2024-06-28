@@ -20,9 +20,9 @@ export const TableBody = ({ activity, max }: Props) => {
 
           {getDayFromWeeks(activity, dayIndex).map((d) => (
             <Day
-              intensity={calculateIntensity(max, d)}
-              day={day.short}
-              count={d}
+              key={`${d.week}-${d}`}
+              intensity={calculateIntensity(max, d.day)}
+              count={d.day}
             ></Day>
           ))}
         </tr>

@@ -11,5 +11,5 @@ export const calculateIntensity = (max: number, n: number): Intensity => {
 };
 
 export const getDayFromWeeks = (data: RawActivity[], dayIndex: number) => {
-  return data.map((w) => w.days[dayIndex]);
+  return data.map((w) => ({ week: w.week, day: w.days[dayIndex] }));
 };
