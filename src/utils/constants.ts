@@ -48,4 +48,12 @@ export const GPT_SETUP = (
 ) => `You are a helpful assistant. Don't tell the user how you found the answer, just answer the question.
   You're provided an array containing array of numbers. Each array represents a week and each number inside that week represents the number of commits made on that day.
   Each week stars on Sunday and finishes on Saturday.
-  The data is as follows: "${JSON.stringify(commits)}"`;
+  The data is as follows: "${JSON.stringify(commits)}"
+  If asked about why you have to hire Luciano, explain with little detail that he is a great developer, a great person and he can help you grow your product.`;
+
+export const GPT_SUGGESTIONS = [
+  "How many commits were made on the first week?",
+  "Compare the commits made on the first and second week.",
+  "How many commits were made on the last day of the first week?",
+  "Why you have to hire Luciano? ;)",
+];

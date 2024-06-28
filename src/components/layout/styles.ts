@@ -1,4 +1,4 @@
-import { sva } from "@/panda/css";
+import { cva, sva } from "@/panda/css";
 
 export const wrapper = sva({
   slots: ["main", "navbar", "content", "gptButton"],
@@ -33,7 +33,7 @@ export const wrapper = sva({
 });
 
 export const chat = sva({
-  slots: ["backdrop", "wrapper", "close", "chat", "form"],
+  slots: ["backdrop", "wrapper", "close", "chat", "suggestions", "form"],
   base: {
     backdrop: {
       position: "fixed",
@@ -69,6 +69,16 @@ export const chat = sva({
     close: {
       cursor: "pointer",
       width: "min-content",
+    },
+    suggestions: {
+      flexGrow: 1,
+
+      display: "grid",
+      gridTemplateColumns: "repeat(2, 150px)",
+      gridTemplateRows: "repeat(2, 100px)",
+      alignContent: "center",
+      justifyContent: "center",
+      gap: 4,
     },
     chat: {
       flexGrow: 1,
@@ -148,5 +158,13 @@ export const chatBubble = sva({
         },
       },
     },
+  },
+});
+
+export const suggestion = cva({
+  base: {
+    cursor: "pointer",
+    border: "1px solid lightgrey",
+    borderRadius: 4,
   },
 });

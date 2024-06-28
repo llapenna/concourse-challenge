@@ -3,8 +3,9 @@ import { XCircle, PaperPlaneRight } from "phosphor-react";
 
 import { useChat } from "@/hooks/useChat";
 import { Message } from "@/types/message";
+import { GPT_SUGGESTIONS } from "@/utils/constants";
 
-import { chat, chatBubble } from "./styles";
+import { chat, chatBubble, suggestion } from "./styles";
 
 interface ChatBubbleProps extends Message {}
 export const ChatBubble = ({ role, content }: ChatBubbleProps) => {
@@ -14,6 +15,18 @@ export const ChatBubble = ({ role, content }: ChatBubbleProps) => {
       <div className={classes.role}>{role === "user" ? "Me" : "Concourse"}</div>
       <div className={classes.content}>{content}</div>
     </div>
+  );
+};
+
+interface SuggestionProps {
+  content: string;
+  onClick: () => void;
+}
+export const Suggestion = ({ content, onClick }: SuggestionProps) => {
+  return (
+    <button onClick={onClick} className={suggestion()}>
+      {content}
+    </button>
   );
 };
 
@@ -37,6 +50,10 @@ export const Chatbox = ({ isOpen, close }: Props) => {
     ask(messageInput);
   };
 
+  const onSuggestionClick = (suggestion: string) => {
+    ask(suggestion);
+  };
+
   const classes = chat({ open: isOpen });
 
   return (
@@ -45,13 +62,27 @@ export const Chatbox = ({ isOpen, close }: Props) => {
         <button className={classes.close} onClick={close}>
           <XCircle size={24}></XCircle>
         </button>
-        <div className={classes.chat}>
-          {conversation.map((msg) => (
-            <ChatBubble key={msg.content} {...msg}></ChatBubble>
-          ))}
+        {/* TODO: add suggestion */}
+        {conversation.length === 0 && (
+          <div className={classes.suggestions}>
+            {GPT_SUGGESTIONS.map((suggestion) => (
+              <Suggestion
+                key={suggestion}
+                content={suggestion}
+                onClick={() => onSuggestionClick(suggestion)}
+              ></Suggestion>
+            ))}
+          </div>
+        )}
 
-          {/* TODO: add suggestion */}
-        </div>
+        {!!conversation.length && (
+          <div className={classes.chat}>
+            {conversation.map((msg) => (
+              <ChatBubble key={msg.content} {...msg}></ChatBubble>
+            ))}
+          </div>
+        )}
+        <div></div>
         <form onSubmit={onAIAsk} className={classes.form}>
           <input
             ref={inputRef}
