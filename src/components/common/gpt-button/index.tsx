@@ -1,8 +1,10 @@
-import { gptButton } from "@/panda/recipes";
 import { Sparkle } from "phosphor-react";
+import { MouseEventHandler } from "react";
+
+import { gptButton } from "@/panda/recipes";
 
 interface Props {
-  onClick?: () => void;
+  onClick?: MouseEventHandler;
 }
 export const GPTButton = ({ onClick }: Props) => {
   const classes = gptButton();
