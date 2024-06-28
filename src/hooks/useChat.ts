@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-import { RawActivity } from "@/types/activity";
+import { Activity } from "@/types/activity";
 import { Message } from "@/types/message";
 import { ask as askService } from "@/services/gpt";
 import { GPT_SETUP } from "@/utils/constants";
 
 import { useActivity } from "./useActivity";
 
-const setup = (data: RawActivity[]): Message => ({
+const setup = (data: Activity[]): Message => ({
   role: "system",
   content: GPT_SETUP(data.map((w) => w.days)),
 });

@@ -1,4 +1,4 @@
-import { RawActivity } from "@/types/activity";
+import { Activity } from "@/types/activity";
 import { MONTHS } from "@/utils/constants";
 
 import { monthsAxis } from "../styles";
@@ -7,7 +7,7 @@ const getMonth = (timestamp: number) => new Date(timestamp * 1000).getMonth();
 const monthToString = (timestamp: number) => MONTHS[getMonth(timestamp)].short;
 
 interface Props {
-  activity: RawActivity[];
+  activity: Activity[];
 }
 export const TableHeader = ({ activity }: Props) => {
   return (

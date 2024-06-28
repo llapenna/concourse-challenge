@@ -1,4 +1,4 @@
-import { Intensity, RawActivity } from "@/types/activity";
+import { Intensity, Activity } from "@/types/activity";
 
 export const calculateIntensity = (max: number, n: number): Intensity => {
   if (n === 0) return Intensity.Empty;
@@ -10,6 +10,6 @@ export const calculateIntensity = (max: number, n: number): Intensity => {
   return Math.ceil(n / scale);
 };
 
-export const getDayFromWeeks = (data: RawActivity[], dayIndex: number) => {
+export const getDayFromWeeks = (data: Activity[], dayIndex: number) => {
   return data.map((w) => ({ week: w.week, day: w.days[dayIndex] }));
 };

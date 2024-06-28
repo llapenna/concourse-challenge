@@ -1,7 +1,7 @@
 /**
  * Activity data right from the API
  */
-export interface RawActivity {
+export interface Activity {
   days: number[];
   total: number;
   week: number;

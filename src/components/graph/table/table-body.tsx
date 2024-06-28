@@ -1,4 +1,4 @@
-import { RawActivity } from "@/types/activity";
+import { Activity } from "@/types/activity";
 import { WEEK_DAYS, MONTHS } from "@/utils/constants";
 
 import { daysAxis } from "../styles";
@@ -17,7 +17,7 @@ const formatDate = (timestamp: number, dayIndex: number) => {
 };
 
 interface Props {
-  activity: RawActivity[];
+  activity: Activity[];
   max: number;
 }
 export const TableBody = ({ activity, max }: Props) => {
