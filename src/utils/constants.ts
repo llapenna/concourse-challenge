@@ -39,3 +39,13 @@ export const MONTHS = [
   { expanded: "November", short: "Nov" },
   { expanded: "December", short: "Dec" },
 ];
+
+/**
+ * Initial message to set up the conversation with the GPT model
+ */
+export const GPT_SETUP = (
+  commits: number[][]
+) => `You are a helpful assistant. Don't tell the user how you found the answer, just answer the question.
+  You're provided an array containing array of numbers. Each array represents a week and each number inside that week represents the number of commits made on that day.
+  Each week stars on Sunday and finishes on Saturday.
+  The data is as follows: "${JSON.stringify(commits)}"`;
