@@ -45,10 +45,12 @@ You can now access the app at [localhost:5173](http://localhost:5173).
 
 ## Project Architecture
 
+- `src/main.tsx`: where all the state providers are rendered.
+- `src/App.tsx`: main component that renders the application layout.
 - `src/components`: React components reused across the application.
 - `src/context`: React context used to manage global state.
 - `src/hooks`: custom hooks used to fetch data and manage state.
 - `src/services`: functions that interact directly with externals APIs (like OpenAI).
 - `src/styles`: global styles and theme configuration.
 - `src/types`: TypeScript types used across the application.
-- `src/utils`: utility functions and constants
+- `src/utils`: utility functions and constants.

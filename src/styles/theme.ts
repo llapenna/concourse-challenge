@@ -14,7 +14,6 @@ export const base = defineThemeVariant({
       dayBox: { value: "12px" },
     },
     colors: {
-      // TODO: Define more theme colors
       // Background
       mainBg: themedToken("{colors.emerald.50}", "{colors.slate.900}"),
       graphBg: themedToken("{colors.white}", "{colors.slate.800}"),

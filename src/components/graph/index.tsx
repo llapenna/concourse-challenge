@@ -11,7 +11,6 @@ export const Graph = () => {
       <div className={classes.graph}>
         <Table></Table>
       </div>
-      {/* TODO: align to the right */}
       <div className={classes.legend}>
         Less
         <div className={hstack({ gap: 1 })}>

@@ -10,15 +10,12 @@ export const getMaxIntensity = (data: Activity[]) => {
   return Math.max(...allContributions);
 };
 
-// TODO: add a context to store the data
 export const useActivity = () => {
   const { data, error, isLoading } = useSWR<Activity[]>(COMMITS_API, fetcher);
 
   const parsedData = useMemo(() => {
     if (!data) return null;
 
-    // TODO: Transform/map this data so it can be used easily in the Activity component
-    // TODO: sort the data to make sure it's ordered by date
     return data;
   }, [data]);
 

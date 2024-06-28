@@ -62,7 +62,6 @@ export const Chatbox = ({ isOpen, close }: Props) => {
         <button className={classes.close} onClick={close}>
           <XCircle size={24}></XCircle>
         </button>
-        {/* TODO: add suggestion */}
         {conversation.length === 0 && (
           <div className={classes.suggestions}>
             {GPT_SUGGESTIONS.map((suggestion) => (

@@ -27,7 +27,6 @@ export const useChat = () => {
     const userMessage: Message = { role: "user", content: prompt };
 
     const newState =
-      // TODO: remove null assertion
       messages.length === 0
         ? [setup(data!), userMessage]
         : [...messages, userMessage];
